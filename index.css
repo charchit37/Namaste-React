@@ -1,3 +1,290 @@
-.text-red{
-  color: red;
+@font-face {
+  font-family: "Basis Grotesque Pro Bold";
+  src: url("https://db.onlinewebfonts.com/t/98a34676ba814c4848424f733521ea58.eot");
+  src: url("https://db.onlinewebfonts.com/t/98a34676ba814c4848424f733521ea58.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/98a34676ba814c4848424f733521ea58.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/98a34676ba814c4848424f733521ea58.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/98a34676ba814c4848424f733521ea58.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/98a34676ba814c4848424f733521ea58.svg#Basis Grotesque Pro Bold")
+      format("svg");
+}
+
+.restaurant-details {
+  margin: 0px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.75);
+  overflow: hidden;
+  width: 100%;
+  display: -webkit-box;
+  overflow-wrap: break-word;
+}
+
+.rating {
+  display: flex;
+  gap: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.75);
+}
+
+.rating-details {
+  display: flex;
+  gap: 8px;
+}
+
+.cusines-card-info {
+  margin-top: 4px;
+}
+
+.cusines-card {
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.6);
+  overflow: hidden;
+  width: 100%;
+  display: -webkit-box;
+  overflow-wrap: break-word;
+}
+
+.cusines-card-area {
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.6);
+  overflow: hidden;
+  width: 100%;
+  display: -webkit-box;
+  overflow-wrap: break-word;
+  margin: 8px 0;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+.logo {
+  width: 200px;
+}
+
+.filter-container {
+  display: flex;
+}
+
+.search button {
+  margin: 5px;
+}
+
+.top-restaurants {
+  margin-top: 5px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.navbar li {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 50px 0px;
+}
+
+.search {
+  padding: 10px;
+}
+
+.res-links {
+  text-decoration: none;
+  color: black;
+}
+
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 70px;
+  /* padding: 0px 70px; */
+}
+
+.res-card {
+  max-width: 200px;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 16px;
+  font-family: "Basis Grotesque Pro Bold";
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.res-card:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.res-logo {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.filter-btn {
+  margin: 10px;
+  cursor: pointer;
+}
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shimmer-card {
+  margin: 30px;
+  width: 300px;
+  height: 400px;
+  background-color: #f0f0f0;
+}
+
+.reset-filter {
+  position: relative;
+}
+
+.reset-btn {
+  position: absolute;
+  top: 15px;
+  cursor: pointer;
+}
+
+.res-details {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.res-heading {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.4px;
+  color: rgba(2, 6, 12, 0.92);
+}
+
+.star-rating {
+  display: flex;
+  gap: 5px;
+}
+
+.res-cards {
+  background: linear-gradient(
+    rgb(255, 255, 255) -6.71%,
+    rgb(235, 235, 242) 56.19%,
+    rgb(223, 223, 231) 106.56%
+  );
+  padding: 0 16px 16px;
+  border-bottom-left-radius: 36px;
+  border-bottom-right-radius: 36px;
+}
+
+.card {
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(2, 6, 12, 0.15);
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 8px 16px 0;
+}
+.res-ratings {
+  display: flex;
+  gap: 8px;
+  font-weight: 700;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 8px 16px 0px;
+}
+
+.cusines {
+  margin-top: 8px;
+  font-family: Basis_Grotesque_Pro_Bold;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: -0.1px;
+  text-decoration: underline;
+}
+
+.cusines-info {
+  color: rgb(241, 87, 0);
+}
+
+.delivery-details {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1.5rem;
+}
+
+.top-circle {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgb(196, 196, 196);
+}
+
+.middle-line {
+  margin-left: 3px;
+  width: 1px;
+  height: 23px;
+  background: rgb(196, 196, 196);
+}
+
+.bottom-circle {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgb(196, 196, 196);
+}
+
+.outlet-head {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.area {
+  font-weight: 200;
+  font-size: 14px;
+  padding-top: 1px;
+  margin-left: 8px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.6);
+}
+
+.delivery-time {
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.horizontal-sepeartor {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-image: initial;
+  border-bottom: 1px solid rgb(240, 240, 245);
+  margin: 12px 0px;
+}
+
+.delivery-info-img {
+  margin-right: 8px;
+  height: 20px;
+  width: 20px;
+}
+
+.additional-info {
+  display: flex;
 }

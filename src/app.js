@@ -14,6 +14,7 @@ const AppLayout = () => (
         <Outlet />
     </div>
 )
+
 const RestaurantMenuWrapper = () => {
     const { resId } = useParams();
     return <RestaurantMenu resId={resId} />;
