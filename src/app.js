@@ -1,10 +1,13 @@
 import { React, lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./components/header";
+import Header from "./components/Header";
 import Body from "./components/Body";
-import { createBrowserRouter, RouterProvider, Outlet, useParams } from 'react-router-dom';
-import About from './components/About';
-import Contact from './components/Contact';
+import {
+    createBrowserRouter,
+    RouterProvider,
+    Outlet,
+    useParams,
+} from "react-router-dom";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/Shimmer";
@@ -14,44 +17,51 @@ const AppLayout = () => (
         <Header></Header>
         <Outlet />
     </div>
-)
+);
 
 const RestaurantMenuWrapper = () => {
     const { resId } = useParams();
     return <RestaurantMenu resId={resId} />;
 };
 
-const Grocery = lazy(() => import("./components/Grocery"));
+const Offer = lazy(() => import('./components/Offer'));
+const Help = lazy(() => import('./components/Help'));
+const SignIn = lazy(() => import("./components/Sign"));
+const Cart = lazy(() => import('./components/Cart'));
 
 const appRouter = createBrowserRouter([
     {
-        path: '/',
+        path: "/",
         element: <AppLayout />,
         children: [
             {
-                path: '/',
+                path: "/",
                 element: <Body />
             },
             {
-                path: '/about',
-                element: <About />
+                path: "/offer",
+                element: <Suspense fallback={<Shimmer />}> <Offer /></Suspense>
             },
             {
-                path: '/contact',
-                element: <Contact />
+                path: "/help",
+                element: <Suspense fallback={<Shimmer />}><Help /></Suspense>
             },
             {
-                path: '/grocery',
-                element: <Suspense fallback={<Shimmer />}><Grocery /></Suspense>
+                path: "/sign-in",
+                element: <Suspense fallback={<Shimmer />}><SignIn /></Suspense>
             },
             {
-                path: '/restaurants/:resId',
-                element: <RestaurantMenuWrapper />
-            }
+                path: "cart",
+                element: <Suspense fallback={<Shimmer />}><Cart /> </Suspense>
+            },
+            {
+                path: "/restaurants/:resId",
+                element: <Suspense fallback={<Shimmer />}><RestaurantMenuWrapper /></Suspense>
+            },
         ],
-        errorElement: <Error />
+        errorElement: <Error />,
     },
-])
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />);

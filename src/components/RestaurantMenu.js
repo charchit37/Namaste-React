@@ -1,20 +1,20 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
 import Shimmer from '../components/Shimmer';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { userRestaurantMenu } from '../utils/useRestaurantMenu';
 
 const RestaurantMenu = (data) => {
     const resId = data.resId;
     const resInfo = userRestaurantMenu(resId);
+    console.log(resInfo)
 
     if (resInfo === null) return <Shimmer />;
     return (
-        <div className='res-details'>
-            <h1 className='res-heading'>{resInfo?.data?.cards[0].card.card.text}</h1>
-            <div className='res-cards'>
-                <div className='card'>
-                    <div className='star-rating'>
+        <div className="res-details mt-2">
+            <h1 className="res-heading font-extrabold text-24 leading-28">{resInfo?.data?.cards[0].card.card.text}</h1>
+            <div className="res-cards">
+                <div className="card px-2.5 rounded-20 bg-white">
+                    <div className="flex gap-2">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" role="img" aria-hidden="true" strokeColor="rgba(2, 6, 12, 0.92)" fillColor="rgba(2, 6, 12, 0.92)">
                             <circle cx="10" cy="10" r="9" fill="url(#StoreRating20_svg__paint0_linear_32982_71567)">
                             </circle>
@@ -24,35 +24,34 @@ const RestaurantMenu = (data) => {
                                     <stop offset="1" stop-color="#128540"></stop>
                                 </linearGradient></defs>
                         </svg>
-                        <div className='res-ratings'>
+                        <div className="res-ratings flex font-bold gap-2">
                             <span>{resInfo?.data?.cards[2]?.card?.card?.info?.avgRating}</span>
                             <span>({resInfo?.data?.cards[2]?.card?.card?.info?.totalRatingsString})</span>
                             <span>.</span>
                             <span>({resInfo?.data?.cards[2]?.card?.card?.info?.costForTwoMessage})</span>
                         </div>
                     </div>
-                    <div className='cusines'>
+                    <div className="font-bold text-sm mt-2 underline">
                         <Link to="#" className='cusines-info'>{resInfo?.data?.cards[2]?.card?.card?.info?.cuisines.join(", ")}</Link>
                     </div>
-
-                    <div className='delivery-details'>
-                        <div className='seperator'>
-                            <div className='top-circle'></div>
-                            <div className='middle-line'></div>
-                            <div className='bottom-circle'></div>
+                    <div className="flex items-center mt-2 gap-2">
+                        <div>
+                            <div className="top-circle"></div>
+                            <div className="middle-line"></div>
+                            <div className="bottom-circle"></div>
                         </div>
-                        <div className='outlet-details'>
-                            <span className='outlet-head'>Outlet</span>
-                            <span className='area'>{resInfo?.data?.cards[2]?.card?.card?.info?.locality}</span>
-                            <div className='delivery-time'>
+                        <div className="outlet-details">
+                            <span className="font-bold text-sm">Outlet</span>
+                            <span className="area">{resInfo?.data?.cards[2]?.card?.card?.info?.locality}</span>
+                            <div className="font-bold text-sm mt-2">
                                 <span>{resInfo?.data?.cards[2]?.card?.card?.info?.sla.minDeliveryTime} - </span>
                                 <span>{resInfo?.data?.cards[2]?.card?.card?.info?.sla.maxDeliveryTime} mins</span>
                             </div>
                         </div>
 
                     </div>
-                    <hr className='horizontal-sepeartor' />
-                    <div className='additional-info'>
+                    <hr className="horizontal-sepeartor" />
+                    <div className="flex">
                         <img src='https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_40,h_40/v1648208530/surgecreatives/info' className='delivery-info-img' />
                         <div className='info'>
                             <span>

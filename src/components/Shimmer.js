@@ -1,5 +1,5 @@
 const Shimmer = ()=>{
-    return <div className="shimmer-container">
+    return <div className="flex flex-wrap">
           <div className="shimmer-card"></div>
           <div className="shimmer-card"> </div>
           <div className="shimmer-card"> </div>

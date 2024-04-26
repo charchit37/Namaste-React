@@ -28,56 +28,26 @@
   overflow-wrap: break-word;
 }
 
-.header {
+.container-header {
   box-shadow: 0 15px 40px -20px rgba(40, 44, 63, 0.15);
-  display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-  min-width: 1200px;
-  /* position: relative; */
-  margin: 0 auto;
-  height: 80px;
   background: #fff;
-  align-items: center;
-  /* border: 1px solid black; */
 }
 
 .logo {
-  width: 150px;
+  width: 80px;
 }
 
-.filter-container {
-  display: flex;
-}
+/* Search Functionality */
 
 .search button {
   margin: 5px;
 }
 
-.nav-items {
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  gap: 32px;
-  flex: 1;
-}
-
-/* .navbar ul {
-  list-style-type: none;
-  padding: 0px;
-  margin: 0px;
-  overflow: hidden;
-} */
-
-/* .navbar li {
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 50px 0px;
-} */
-
 .search {
   padding: 10px;
 }
+
+/* Restaurant Card */
 
 .res-links {
   text-decoration: none;
@@ -102,6 +72,8 @@
   cursor: pointer;
 }
 
+/* Dummy UI When page reloads */
+
 .shimmer-container {
   display: flex;
   flex-wrap: wrap;
@@ -114,16 +86,14 @@
   background-color: #f0f0f0;
 }
 
+/* Restaurant Menu  */
+
 .res-details {
   max-width: 800px;
   margin: 0 auto;
 }
 
 .res-heading {
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 28px;
-  letter-spacing: -0.4px;
   color: rgba(2, 6, 12, 0.92);
 }
 .res-cards {
@@ -138,37 +108,15 @@
 }
 
 .card {
-  padding: 10px;
-  border-radius: 20px;
   border: 1px solid rgba(2, 6, 12, 0.15);
-  background: white;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 8px 16px 0;
 }
 .res-ratings {
-  display: flex;
-  gap: 8px;
-  font-weight: 700;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 8px 16px 0px;
-}
-
-.cusines {
-  margin-top: 8px;
-  font-family: Basis_Grotesque_Pro_Bold;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: -0.1px;
-  text-decoration: underline;
 }
 
 .cusines-info {
   color: rgb(241, 87, 0);
-}
-
-.delivery-details {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 1.5rem;
 }
 
 .top-circle {
@@ -192,11 +140,6 @@
   background: rgb(196, 196, 196);
 }
 
-.outlet-head {
-  font-weight: 700;
-  font-size: 14px;
-}
-
 .area {
   font-weight: 200;
   font-size: 14px;
@@ -204,12 +147,6 @@
   margin-left: 8px;
   letter-spacing: -0.3px;
   color: rgba(2, 6, 12, 0.6);
-}
-
-.delivery-time {
-  font-weight: 700;
-  font-size: 14px;
-  margin-top: 8px;
 }
 
 .horizontal-sepeartor {
@@ -225,8 +162,4 @@
   margin-right: 8px;
   height: 20px;
   width: 20px;
-}
-
-.additional-info {
-  display: flex;
 }
