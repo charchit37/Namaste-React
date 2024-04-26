@@ -27,31 +27,31 @@ const Body = () => {
         <div className="body">
             <div className="filter-container">
                 <div className="search">
-                    <input type="text" placeholder="search" value={searchText}
+                    <input type="text" className="g-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="search" value={searchText}
                         onChange={
                             (e) => {
                                 setSearchText(e.target.value)
                             }} />
-                    <button type="button" onClick={() => {
+                    <button type="button" className="bg-blue-400 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded" onClick={() => {
                         const searchList = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                         setFilteredList(searchList);
                     }}>Search</button>
                 </div>
-                <div className="top-restaurants">
-                    <button className="filter-btn" onClick={() => {
+                <div className="flex items-center">
+                    <button className="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br font-medium rounded-lg text-sm px-2 py-2" onClick={() => {
                         const filteredList = listOfRestaurants.filter((res) => res?.info.avgRating > 4);
                         setFilteredList(filteredList);
                     }}
                     >Top Rated Restaurants</button>
                 </div>
-                <div className="reset-filter">
-                    <button className="reset-btn"
+                <div className="flex items-center">
+                    <button className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-2 py-2 text-center ml-2"
                         onClick={() => {
                             setFilteredList(listOfRestaurants)
                         }}>Reset</button>
                 </div>
             </div>
-            <div className="res-container">
+            <div className="res-container flex flex-wrap">
                 {
                     filteredRestaurant.map((restaurant) => (
 

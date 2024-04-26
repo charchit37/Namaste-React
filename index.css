@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: "Basis Grotesque Pro Bold";
   src: url("https://db.onlinewebfonts.com/t/98a34676ba814c4848424f733521ea58.eot");
@@ -13,69 +17,33 @@
       format("svg");
 }
 
-.restaurant-details {
-  margin: 0px;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: -0.3px;
-  color: rgba(2, 6, 12, 0.75);
-  overflow: hidden;
-  width: 100%;
-  display: -webkit-box;
-  overflow-wrap: break-word;
-}
-
-.rating {
-  display: flex;
-  gap: 4px;
-  font-weight: 700;
-  font-size: 16px;
+.restaurant-details-text-color {
   letter-spacing: -0.3px;
   color: rgba(2, 6, 12, 0.75);
 }
 
-.rating-details {
-  display: flex;
-  gap: 8px;
-}
-
-.cusines-card-info {
-  margin-top: 4px;
-}
-
-.cusines-card {
-  font-weight: 200;
-  font-size: 16px;
-  line-height: 19px;
+.cusines-card-config {
   letter-spacing: -0.3px;
   color: rgba(2, 6, 12, 0.6);
-  overflow: hidden;
-  width: 100%;
-  display: -webkit-box;
   overflow-wrap: break-word;
 }
 
-.cusines-card-area {
-  font-weight: 200;
-  font-size: 16px;
-  line-height: 19px;
-  letter-spacing: -0.3px;
-  color: rgba(2, 6, 12, 0.6);
-  overflow: hidden;
-  width: 100%;
-  display: -webkit-box;
-  overflow-wrap: break-word;
-  margin: 8px 0;
-}
 .header {
+  box-shadow: 0 15px 40px -20px rgba(40, 44, 63, 0.15);
   display: flex;
   justify-content: space-between;
-  border: 1px solid black;
+  max-width: 1200px;
+  min-width: 1200px;
+  /* position: relative; */
+  margin: 0 auto;
+  height: 80px;
+  background: #fff;
+  align-items: center;
+  /* border: 1px solid black; */
 }
 
 .logo {
-  width: 200px;
+  width: 150px;
 }
 
 .filter-container {
@@ -86,22 +54,26 @@
   margin: 5px;
 }
 
-.top-restaurants {
-  margin-top: 5px;
+.nav-items {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 32px;
+  flex: 1;
 }
 
-.navbar ul {
+/* .navbar ul {
   list-style-type: none;
   padding: 0px;
   margin: 0px;
   overflow: hidden;
-}
+} */
 
-.navbar li {
+/* .navbar li {
   display: inline-block;
   padding: 10px 20px;
   margin: 50px 0px;
-}
+} */
 
 .search {
   padding: 10px;
@@ -113,30 +85,16 @@
 }
 
 .res-container {
-  display: flex;
-  flex-wrap: wrap;
   padding: 0 70px;
-  /* padding: 0px 70px; */
 }
 
 .res-card {
-  max-width: 200px;
-  margin: 5px;
-  padding: 5px;
-  border-radius: 16px;
   font-family: "Basis Grotesque Pro Bold";
-  font-weight: 700;
-  font-size: 18px;
 }
 
 .res-card:hover {
   border: 1px solid black;
   cursor: pointer;
-}
-
-.res-logo {
-  width: 100%;
-  border-radius: 16px;
 }
 
 .filter-btn {
@@ -156,16 +114,6 @@
   background-color: #f0f0f0;
 }
 
-.reset-filter {
-  position: relative;
-}
-
-.reset-btn {
-  position: absolute;
-  top: 15px;
-  cursor: pointer;
-}
-
 .res-details {
   max-width: 800px;
   margin: 0 auto;
@@ -178,12 +126,6 @@
   letter-spacing: -0.4px;
   color: rgba(2, 6, 12, 0.92);
 }
-
-.star-rating {
-  display: flex;
-  gap: 5px;
-}
-
 .res-cards {
   background: linear-gradient(
     rgb(255, 255, 255) -6.71%,

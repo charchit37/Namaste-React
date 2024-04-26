@@ -19,21 +19,21 @@ const RestaurantCard = (props) => {
     const { cloudinaryImageId, name, locality, cuisines, avgRating } = resData?.info || {};
     const { slaString } = resData?.info.sla || '';
     return (
-        <div className="res-card">
-            <img className="res-logo" src={CDN_URL + cloudinaryImageId}></img>
-            <h3 className="restaurant-details">{name}</h3>
-            <div className="rating">
-                <div className="star-rating">
+        <div className="res-card flex flex-wrap max-w-48 p-2 rounded-lg font-bold text-base text-18">
+            <img className="w-100 rounded-lg" src={CDN_URL + cloudinaryImageId}></img>
+            <h3 className="restaurant-details-text-color break-words overflow-hidden mt-4 font-bold w-full text-base">{name}</h3>
+            <div className="restaurant-details-text-color flex gap-1 font-bold text-base">
+                <div className="flex gap-1.5">
                     <StarRating />
                 </div>
-                <div className="rating-details">
+                <div className="flex gap-2">
                     <span>{avgRating}</span>
                     <span>{slaString}</span>
                 </div>
             </div>
-            <div className="cusines-card-info">
-                <span className="cusines-card">{cuisines?.join(", ")}</span>
-                <p className="cusines-card-area">{locality}</p>
+            <div className="mt-4">
+                <span className="cusines-card-config font-thin text-base w-full overflow-hidden">{cuisines?.join(", ")}</span>
+                <p className="cusines-card-config mt-1">{locality}</p>
             </div>
         </div>
     )
