@@ -6,12 +6,13 @@ import { userRestaurantMenu } from '../utils/useRestaurantMenu';
 const RestaurantMenu = (data) => {
     const resId = data.resId;
     const resInfo = userRestaurantMenu(resId);
-    console.log(resInfo)
+    console.log(resInfo?.data?.cards[3].card.card.gridElements.infoWithStyle.offers)
+    const offersList = resInfo?.data?.cards[3].card.card.gridElements.infoWithStyle.offers;
 
     if (resInfo === null) return <Shimmer />;
     return (
         <div className="res-details mt-2">
-            <h1 className="res-heading font-extrabold text-24 leading-28">{resInfo?.data?.cards[0].card.card.text}</h1>
+            <h1 className="res-heading">{resInfo?.data?.cards[0].card.card.text}</h1>
             <div className="res-cards">
                 <div className="card px-2.5 rounded-20 bg-white">
                     <div className="flex gap-2">
@@ -61,7 +62,19 @@ const RestaurantMenu = (data) => {
                     </div>
                 </div>
             </div>
-
+            <div>
+                <h2>Deals For You</h2>
+                <div className="offers">
+                    <div className="row">
+                        {offersList.map((offer, index) => (
+                            <div key={index} className="flex gap-2 items-center offer-details">
+                                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_96,h_96/offers/generic" width="48" height="48" alt="50% Off Upto ₹100"></img>
+                                {offer.info.header.charAt(0).toUpperCase() + offer.info.header.slice(1).toLowerCase()}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
         </div>
     )
 

@@ -23,7 +23,7 @@ const Body = () => {
     const onlineStatus = useOnlineStatus();
     if (onlineStatus === false) return <h1>Oops It looks like you are offline please check your internet connection</h1>
 
-    return listOfRestaurants.length === 0 ? <Shimmer /> : (
+    return listOfRestaurants?.length === 0 ? <Shimmer /> : (
         <div className="body">
             <div className="flex">
                 <div className="search">
@@ -53,7 +53,7 @@ const Body = () => {
             </div>
             <div className="res-container flex flex-wrap">
                 {
-                    filteredRestaurant.map((restaurant) => (
+                    filteredRestaurant?.map((restaurant) => (
 
                         <Link to={"/restaurants/" + restaurant.info.id} className="res-links">
                             <RestaurantCard key={restaurant.info.id} resData={restaurant}> </RestaurantCard>
