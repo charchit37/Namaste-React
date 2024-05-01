@@ -89,6 +89,7 @@
   letter-spacing: -0.4px;
   color: rgba(2, 6, 12, 0.92);
 }
+
 .res-cards {
   background: linear-gradient(
     rgb(255, 255, 255) -6.71%,
@@ -103,7 +104,10 @@
 .card {
   border: 1px solid rgba(2, 6, 12, 0.15);
   box-shadow: rgba(0, 0, 0, 0.04) 0px 8px 16px 0;
+  border-radius: 20px;
+  padding: 12px;
 }
+
 .res-ratings {
   box-shadow: rgba(0, 0, 0, 0.04) 0px 8px 16px 0px;
 }
@@ -158,18 +162,8 @@
 }
 
 .offer-details {
-  /* border: 1px solid rgb(226, 226, 231);
-  boder-radius: 20px;
-  border-radius: 20px;
-  padding: 10px;
-  margin-right: 8px;
-  font-weight: 800;
-  font-size: 18px;
-  cursor: pointer;
-  display: flex;
-  width: 328px; */
   padding: 12px;
-  display: flex;
+  cursor: pointer;
   font-family: Basis Grotesque Pro;
   font-weight: 800;
   font-size: 18px;
@@ -179,8 +173,94 @@
   border: 1px solid rgb(226, 226, 231);
 }
 
-.offers {
-  overflow: scroll hidden;
-  margin-left: 0px;
-  margin-right: 0px;
+.arrows {
+  --fill-color: rgba(2, 6, 12, 0.92);
+  --stroke-color: rgba(2, 6, 12, 0.92);
+  line-height: 0;
+}
+
+.circle {
+  border-radius: 100%;
+  height: 34px;
+  padding: 8px 8px 4px;
+  background: rgb(226, 226, 231);
+}
+
+.res-address {
+  color: #535665;
+}
+
+.res-loc {
+  font-weight: 400;
+  font-size: 10px;
+  color: #93959f;
+}
+
+.jdb2dj {
+  font-family: "Basis Grotesque Pro";
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.6);
+  padding: 28px 0;
+}
+
+.item-name {
+  font-family: "Basis Grotesque Pro Bold";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.75);
+}
+
+.rating-info {
+  font-family: "Basis Grotesque Pro Bold";
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: -0.1px;
+}
+
+.rating-star-color {
+  color: rgb(17, 102, 73);
+}
+
+.rating-count {
+  font-family: "Basis Grotesque Pro";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.6);
+}
+
+.rating-count::before {
+  content: " (";
+}
+
+.rating-count::after {
+  content: ")";
+}
+
+.item-container {
+  padding: 14px 0px;
+}
+
+.res-img {
+  border-radius: 20px;
+  max-width: 100%;
+  height: auto;
+}
+
+.food-img {
+  max-height: auto;
+  width: 180px;
+  min-height: 180px;
+  margin-left: 28px;
+}
+
+.jd2dj2 {
+  border-top: 16px solid rgba(2, 6, 12, 0.05);
 }
