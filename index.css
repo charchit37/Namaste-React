@@ -91,11 +91,9 @@
 }
 
 .res-cards {
-  background: linear-gradient(
-    rgb(255, 255, 255) -6.71%,
-    rgb(235, 235, 242) 56.19%,
-    rgb(223, 223, 231) 106.56%
-  );
+  background: linear-gradient(rgb(255, 255, 255) -6.71%,
+      rgb(235, 235, 242) 56.19%,
+      rgb(223, 223, 231) 106.56%);
   padding: 0 16px 16px;
   border-bottom-left-radius: 36px;
   border-bottom-right-radius: 36px;
@@ -206,20 +204,59 @@
   padding: 28px 0;
 }
 
-.item-name {
+.item-container {
+  padding: 14px 0px;
+}
+
+.res-img {
+  object-fit: cover;
+  border-radius: 12px;
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  position: relative;
+  left: 70px;
+  top: 10px;
+}
+
+.food-img {
+  margin-left: 120px;
+  max-height: 164px;
+  min-width: 156px;
+}
+
+/*  */
+
+.jd2dj2 {
+  border-top: 16px solid rgba(2, 6, 12, 0.05);
+}
+
+.res-category {
+  border-top: 16px solid rgba(2, 6, 12, 0.05);
+}
+
+.res-title {
   font-family: "Basis Grotesque Pro Bold";
-  font-weight: 700;
+  font-weight: 800;
   font-size: 18px;
   line-height: 20px;
   letter-spacing: -0.3px;
-  color: rgba(2, 6, 12, 0.75);
+  color: rgba(2, 6, 12, 0.92);
+  padding: 28px 0;
 }
+
+.cHgtwe::before {
+  content: " (";
+}
+
+.cHgtwe::after {
+  content: ")";
+}
+
+/*  */
 
 .rating-info {
   font-family: "Basis Grotesque Pro Bold";
-  font-weight: 700;
-  font-size: 13px;
-  line-height: 16px;
   letter-spacing: -0.1px;
 }
 
@@ -230,7 +267,7 @@
 .rating-count {
   font-family: "Basis Grotesque Pro";
   font-weight: 400;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 16px;
   letter-spacing: -0.3px;
   color: rgba(2, 6, 12, 0.6);
@@ -244,23 +281,48 @@
   content: ")";
 }
 
-.item-container {
-  padding: 14px 0px;
+.item-name {
+  font-family: "Basis Grotesque Pro Bold";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.75);
 }
 
-.res-img {
-  border-radius: 20px;
-  max-width: 100%;
-  height: auto;
+.add-btn-text {
+  font-family: "Basis Grotesque Pro Bold";
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: rgb(27, 166, 114);
+  width: 130px;
+  position: relative;
+  box-shadow: rgba(40, 44, 63, 0.08) 0px 3px 8px;
 }
 
-.food-img {
-  max-height: auto;
-  width: 180px;
-  min-height: 180px;
-  margin-left: 28px;
+.add-to-cart {
+  position: relative;
 }
 
-.jd2dj2 {
-  border-top: 16px solid rgba(2, 6, 12, 0.05);
+.add-to-cart-config {
+  position: absolute;
+  top: 10px;
+  left: 50px;
+}
+
+.add-btn {
+  text-transform: uppercase;
+  color: #1ba672;
+  padding: 5px 40px;
+  font-family: Basis Grotesque Pro Bold;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 24px;
+  position: relative;
+  bottom: 3px;
+  top: 140px;
+  left: 85px;
+  z-index: 9999
 }

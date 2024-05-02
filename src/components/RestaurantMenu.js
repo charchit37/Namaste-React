@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Shimmer from "../components/Shimmer";
 import { Link } from "react-router-dom";
 import { userRestaurantMenu } from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
-import { Collapse, initTWE } from "tw-elements";
 
 const RestaurantMenu = (data) => {
     const resId = data.resId;
     const resInfo = userRestaurantMenu(resId);
     const offersList = resInfo?.data?.cards[3].card.card.gridElements.infoWithStyle.offers;
     const categories = resInfo?.data?.cards[4]?.groupedCard.cardGroupMap.REGULAR.cards.filter((d) => d.card.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+    const [showIndex, setShowIndex] = useState(null);
+    const [showItems, setShowItems] = useState(true);
+    const toggleShowItems = () => {
+        setShowItems(prevShowItems => !prevShowItems);
+    };
 
-    initTWE({ Collapse });
 
     if (resInfo === null) return <Shimmer />;
     return (
@@ -98,18 +101,10 @@ const RestaurantMenu = (data) => {
                             </span>
                             <div className="font-bold text-sm mt-2">
                                 <span>
-                                    {
-                                        resInfo?.data?.cards[2]?.card?.card?.info?.sla
-                                            .minDeliveryTime
-                                    }{" "}
-                                    -{" "}
+                                    {resInfo?.data?.cards[2]?.card?.card?.info?.sla.minDeliveryTime}{" "}-{" "}
                                 </span>
                                 <span>
-                                    {
-                                        resInfo?.data?.cards[2]?.card?.card?.info?.sla
-                                            .maxDeliveryTime
-                                    }{" "}
-                                    mins
+                                    {resInfo?.data?.cards[2]?.card?.card?.info?.sla.maxDeliveryTime}{" "}mins
                                 </span>
                             </div>
                         </div>
@@ -158,7 +153,16 @@ const RestaurantMenu = (data) => {
                 </div>
             </div>
             <div>
-                {categories.map((category) => <RestaurantCategory data={category.card.card} />)}
+                {categories.map((category, index) =>
+                    <RestaurantCategory
+                        key={category?.card?.card?.title}
+                        data={category?.card?.card}
+                        showItems={index === showIndex && showItems}
+                        currentIndex={index}
+                        showIndex={showIndex}
+                        toggleShowItems={toggleShowItems}
+                        setShowIndex={() => setShowIndex(index)}
+                    />)}
             </div>
         </div>
     );

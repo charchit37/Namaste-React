@@ -1,55 +1,39 @@
+
 import ItemList from "./ItemList";
-import { Collapse, initTWE } from "tw-elements";
 
 const RestaurantCategory = (data) => {
-    initTWE({ Collapse });
-
-    return <div id="accordionExample">
-        <div className="jd2dj2 mt-4">
-            <div
-                class="border-neutral-200 bg-white dark:border-neutral-600 dark:bg-body-dark">
-                <h2 class="mb-0" id="headingTwo">
-                    <button
-                        class="group relative flex w-full items-center border-0 bg-white px-5 py-4 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-body-dark dark:text-white [&:not([data-twe-collapse-collapsed])]:bg-white [&:not([data-twe-collapse-collapsed])]:text-primary [&:not([data-twe-collapse-collapsed])]:shadow-border-b dark:[&:not([data-twe-collapse-collapsed])]:bg-surface-dark dark:[&:not([data-twe-collapse-collapsed])]:text-primary dark:[&:not([data-twe-collapse-collapsed])]:shadow-white/10 "
-                        type="button"
-                        data-twe-collapse-init
-                        data-twe-collapse-collapsed
-                        data-twe-target="#collapseTwo"
-                        aria-expanded="false"
-                        aria-controls="collapseTwo">
-                        <div className="font-bold">
-                            {data.data.title} ({data.data.itemCards.length})
-                        </div>
-                        <span
-                            class="-me-1 ms-auto h-5 w-5 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out group-data-[twe-collapse-collapsed]:me-0 group-data-[twe-collapse-collapsed]:rotate-0 motion-reduce:transition-none [&>svg]:h-6 [&>svg]:w-6 ">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke-width="1.5"
-                                stroke="currentColor">
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                            </svg>
-                        </span>
-                    </button>
-                </h2>
-                <div
-                    id="collapseTwo"
-                    class="!visible hidden"
-                    data-twe-collapse-item
-                    aria-labelledby="headingTwo"
-                    data-twe-parent="#accordionExample">
-                    <div class="px-5 py-4">
-                        <ItemList items={data.data.itemCards} />
+    const handleClick = () => {
+        if (data.currentIndex === data.showIndex) {
+            data.toggleShowItems();
+        }
+        data.setShowIndex();
+    };
+    return (
+        <div className="res-category mt-4">
+            <div className="flex res-title cursor-pointer" onClick={handleClick}>
+                <div className="flex-1">
+                    <div>
+                        <span>{data?.data?.title}</span>
+                        <span className="cHgtwe">{data.data.itemCards.length}</span>
                     </div>
                 </div>
+                {data.showItems && <div className="chevron-up-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#000000" height="15px" width="15px" version="1.1" id="Layer_1" viewBox="0 0 407.436 407.436" xmlSpace="preserve">
+                        <polygon points="203.718,91.567 0,294.621 21.179,315.869 203.718,133.924 386.258,315.869 407.436,294.621 " />
+                    </svg>
+                </div>
+                }
+                {!data.showItems && <div className="chevron-down-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#000000" height="15px" width="15px" version="1.1" viewBox="0 0 407.437 407.437" xmlSpace="preserve">
+                        <polygon points="386.258,91.567 203.718,273.512 21.179,91.567 0,112.815 203.718,315.87 407.437,112.815" />
+                    </svg>
+                </div>
+                }
             </div>
+            {data.showItems && <ItemList item={data.data.itemCards} />}
         </div>
-    </div>
-};
+    )
 
+};
 
 export default RestaurantCategory
